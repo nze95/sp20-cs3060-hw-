@@ -1,0 +1,88 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage{enumitem}
+\usepackage{listings,multicol}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+% \fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hyperref}
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+    \normalfont \normalsize 
+    \textsc{CS 3060 Programming Languages, Spring 2020} \\ [25pt] % Your university, school and/or department name(s)
+    \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+    \huge Assignment \#1  \\ % The assignment title
+    \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+% \author{John Smith} % Your name
+
+% \date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+    \begin{center}
+         Assignment \#1\\
+        \small CS 3060 Programming Languages, Spring 2020 \\
+        \small Instructor: S. Roy \\
+        \huge Ruby \#1
+    \end{center}
+    
+    \textbf{Due Date:}  Feb 10 (11:59 pm).\\
+
+    \textbf{Total points:} 60 points \\
+
+    \textbf{Directions:} A ruby code template (with a bunch of empty functions: Function1 to Function5) is provided and it is your task to complete the code. 
+Then, you run the complete code and submut the code as well as a sample output. 
+Check Gitlab \@ \texttt{https://gitlab.com/sanroy/sp20-cs3060-hw} (or check Canvas) for details. 
+The prefered process for completing this assignment should be as follows:
+
+    \begin{enumerate}[noitemsep]
+        \item Fork the Repository ``sp20-cs3060-hw'' to a new Repository named ``sp20-cs3060-hw'' under your namespace (your gitlab username).
+        \item "git clone" the newly created repository on your local machine
+        \item Complete HW1 whose details are in hw1 sub-folder, committing changes to files in hw1. 
+        \item Push all commits to your Gitlab repository
+        \item Add TA (with his gitlab username) as a member of your Gitlab repository
+    \end{enumerate}
+
+If for some reason Gitlab does not work for you, then you submbit the ruby code and results on Canvas.
+
+    \textbf{Tasks:}
+    \begin{enumerate}[noitemsep]
+
+        \item \textbf{(8 Points) function \#1:} Ask the user to type 4 lines (e.g., before going to the next line the user will hit the 'Enter' key, etc.) on keyboard, and your program should save the lines to a file named "myFile.txt".
+        \item \textbf{(8 Points) function \#2:} Ask the user to type the name of a file. If the file contains ``Java'' or ``Javascript'', then print ``The file is interesting''. If the file contains ``Ruby'' or ``ruby'', then print ``The file is awesome''. Otherwise, print "The file is ok". 
+        \item \textbf{(8 Points) function \#3:} Print the string ``The cube of integer $x$ is $y$'' 100 times while substituting $x$ by numbers from 2 to 101 while $y$ is $x^3$.
+        \item \textbf{(16 Points) function \#4:} Let the user pick a number (say $x$) between 50 and 100. Now your program tosses a coin $x$ times. 
+In particular, your program can contain a loop and in each iteration it randomly makes a choice: head (represented by 1) or 
+tail (represented by 0), and stores the outcome (0 or 1) 
+in an array. After the iterations, traverse the array and count how many heads and tails were generated. 
+Also, report the ratio of number of heads and number of tails.
+
+        \item \textbf{(20 Points) function \#5:} Go to \texttt{http://www.textfiles.com/stories/} and check that this site \footnote {Disclaimer: we did not really check whether this website contains any improper story or language. If you find something improper, please ignore this site and use some other source} hosts multiple stories while each story is in a textfile. Download a textfile of your choice, which has atleast 1000 words, and save the file as \texttt{story.txt}. Your program needs to read this file and process it to collect some statistics. In particular, report the total number words in the story, the number of distinct words, the third-most frequent word and its frequency. \textbf {Hints:} You may use Array and Hash data structures as they are available in Ruby. You may design a regular expression to define a \em{word}.  
+
+    \end{enumerate}
+ 
+\end{document}
