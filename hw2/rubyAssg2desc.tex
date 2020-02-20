@@ -1,0 +1,130 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage{enumitem}
+\usepackage{listings,multicol}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+% \fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hyperref}
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+    \normalfont \normalsize 
+    \textsc{CS 3060 Programming Languages, Spring 2020} \\ [25pt] % Your university, school and/or department name(s)
+    \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+    \huge Assignment \#2  \\ % The assignment title
+    \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+% \author{John Smith} % Your name
+
+% \date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+    \begin{center}
+         Assignment \#2\\
+        \small CS 3060 Programming Languages, Spring 2020 \\
+        \small Instructor: S. Roy \\
+        \huge Ruby \#2
+    \end{center}
+    
+    \textbf{Due Date:}  Feb 19. 11:59 pm\\
+
+    \textbf{Total points:} 60 points \\
+
+    \textbf{Directions:} Using the source provided via Gitlab \@ \texttt{https://gitlab.com/sanroy/sp20-cs3060-hw/}, 
+complete the assignment below. The process for completing this assignment should be as follows:
+
+    \begin{enumerate}[noitemsep]
+        \item You already forked the Repository ``sanroy/sp20-cs3060-hw'' to a repository ``yourId/sp20-cs3060-hw'' under your username. If not, do it now.
+        \item Get a copy of hw2 folder in ``sanroy/sp20-cs3060-hw'' repository as a hw2 folder in your repository ``yourId/sp20-cs3060-hw'' 
+        \item Complete the assignment, committing changes to git. Each task code should be in a separate ruby file. As an example, task1.rb for Task 1. 
+        \item Push all commits to your Gitlab repository
+        \item If you have done yet done so, sdd TA (username: pprabesh for Section 1 and username: prabeshpaudel for Section 2 of CS 3060) as a member of your Gitlab repository
+    \end{enumerate}
+
+    \textbf{Tasks:}
+    \begin{enumerate}[noitemsep]
+        \item \textbf{(7 points) Task \#1:} 
+Implement a \emph{myGrep} program that takes a string x as input, 
+and prints the lines of a file having any 
+occurences of string x anywhere in a line. 
+The output should also include the line numbers.
+\emph{Writing README carries 1 point.}
+
+\textbf{Example run}: ruby $~~~$  task1.rb $~~~$  item-to-search (i.e. string x)  $~~~$ file-to-search-in 
+
+Note: 1. Your project repository needs to include a sample file-to-search-in. 2. Do NOT use any library's grep function. You implement it on your own, which may take only few lines of code.
+      
+  \item \textbf{(8 points) Task \#2:} Write a function that takes an array A of integers as the input and does the following: 
+(a) Uses \emph{each} method to print the cube of each element of A, (b) Uses \emph{each\_slice} method to print the elements while printing 
+3 elements at a time, (c) Uses \emph{select} method to find the integers (in A) which are multiple of 5, (d) Uses \emph{map} method to build a 
+new array of cubes of the elements of A, and (e) Uses \emph{inject} method to find the product of all elements of A.
+To test the function, generate an array A of 50 random integers between 10 and 100, and pass into the function as a parameter.
+\emph{Writing README carries 1 point.}
+        \item \textbf{(15 points) Task \#3:}. Function3A calculates the Fibonacci Series ($F_n = F_{n-1} + F_{n-2}$) iteratively. 
+Calculate all Fibonacci numbers ($F_n$) for $n=1$ to 35 (if it takes long time, try until 32 or so). 
+Function3B calculates the same Fibonacci Series but using the recursion technique. 
+After implementing the above two functions, compare the computation time (for doing the above calculation) 
+using Ruby's benchmark library, and also compare lines of code between the two implementations. 
+\emph{Writing README carries 1 point.}
+\textbf{Hint}: if necessary, lecture slides can help you write the iterative version.
+        \item \textbf{(15 points) Task \#4:} The Tree class presented in the textbook (Day 2) chapter is interesting, but it does not allow 
+you to specify a new tree with a clean user interface. Update the constructor and all other methods to accomodate the creation of a tree using a Hash. 
+The initializer should accept a nested structure of Hashes. You should be able to specify a tree as below. To test your functionality, you should traverse 
+this entire tree and print out the contents.
+
+        \begin{lstlisting}[language=Ruby]
+            ruby_tree = Tree.new({
+                'ggrandparent' => { 
+                    'grandparent1' => 
+                        {'parent1' => {'child1' => {}},
+                         'parent2' => {'child2' => {}, 'child3' => {}} 
+                        }, 
+                    'grandparent2' => 
+                        {'parent3' => {'child4' => {}}, 
+                         'parent4' => {'child5' => {}, 'child6' => {}} 
+                        }
+                } 
+            })
+        \end{lstlisting}
+\emph{Writing README carries 1 point.}
+
+\textbf{Hint:} As one example coding style, you may mainly modify the \emph{initialize} function of the Tree class.
+       \item \textbf{(15 points) Task \#5:} In this task, your code creates a random list of 100 shape objects, 
+then traverses the list from start to end, and computes the total area of the shape objects. 
+First you need to implement the class hierarchy diagram of the shape types, which is attached. 
+Shape is an abstract class which has only a "color" attribute whereas Circle class and Rectangle 
+class are concrete children of Shape class, and they have more attributes and constructors. 
+Note that you do not know beforehand the order of the shape objects 
+(i.e. Circles and Rectangles) created in the random list, e.g. you do not know beforehand whether the 1st item is Circle or Rectangle.
+\emph{Writing README carries 1 point.}
+
+Note. When you traverse the list to calculate the total area, you call the area() function of each shape object (without considering if it is Rectangle or Circle). That means, you will use the concept of polymorphism.
+
+\textbf{Hint:} While building the list of shape objects, use rand(2) to generate a random number 0 or 1; if 0, then you may add a Rectangle object, else add a Circle object to the list.
+    \end{enumerate}
+       
+\end{document}
