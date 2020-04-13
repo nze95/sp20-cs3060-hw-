@@ -1,4 +1,4 @@
-//3b
+
 import scala.math._
 
 def foo(list1:List[Int]):Int = {
