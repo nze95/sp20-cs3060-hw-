@@ -1,8 +1,8 @@
-//3a
 
-def foo(list1:List[String]):List[String] = {
+
+def foo(list1:List  [String]):List[String] = {
     list1.map(_.reverse)
 }
 
-val result = foo(List("uno", "dos", "tres", "cuatro", "cinco"))
+val result = foo(List("eth", "iop", "ia", "aye", "limta"))
 println(result)
