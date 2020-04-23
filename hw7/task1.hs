@@ -1,0 +1,1 @@
+main = print ("Hello, the world is great")
